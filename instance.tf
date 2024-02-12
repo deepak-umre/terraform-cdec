@@ -2,7 +2,7 @@ provider "aws" {
   region  = "sa-east-1"
 }
 
-resource "aws_instance" "my_instance" {
+resource "aws_instance" "instance" {
     ami                 = "ami-0623e7a7b489397c1"
     availability_zone   = "sa-east-1a"
     instance_type       = "t2.micro"

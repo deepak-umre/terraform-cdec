@@ -23,3 +23,7 @@ data "aws_ami" "my_ami" {
 variable "instance_type" {
   default = "t2.micro"
 }
+
+output "instance_ip_addr" {
+  value = aws_instance.my-instance.public_ip
+}

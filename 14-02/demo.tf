@@ -27,3 +27,10 @@ variable "instance_type" {
 output "instance_ip_addr" {
   value = aws_instance.my-instance.public_ip
 }
+terraform {
+  backend "s3" {
+    bucket = "terraform-demo-cdec"
+    key    = "terraform.tfstate"
+    region = "sa-east-1"
+  }
+}

@@ -14,10 +14,10 @@ module "vpc" {
 
 module "ec2" {
     source = "./module/ec2"
-    ami             = var.ami
-    instance_type   = var.instance_type
-    key_name        = var.key_name
-    security_groups = module.vpc.aws_security_group
-    subnet_id       = module.vpc.aws_subnet
-    Name            = var.project
+    ami               = var.ami
+    instance_type     = var.instance_type
+    key_name          = var.key_name
+    security_group_id = module.vpc.aws_security_group
+    subnet_id         = module.vpc.aws_subnet
+    Name              = var.project
 }

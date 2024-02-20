@@ -20,7 +20,7 @@ variable "ami_id" {
 output "aws_insta_pub_ip" {
   
 	value = {
- 		for ami in var.ami_id 
+ 		for ami in var.ami_id :
    		aws_instance.my_instance[ami].public_ip
 	
     }

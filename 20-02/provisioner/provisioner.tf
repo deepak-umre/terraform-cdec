@@ -14,7 +14,8 @@ resource "aws_instance" "my_instance" {
         inline = [
         "sudo yum install nginx -y",
         "sudo systemctl start nginx",
-        "sudo systemctl enable nginx"
+        "sudo systemctl enable nginx",
+        "sudo setfacl -R -m u:ec2-user:rwx /usr/share/nginx"
         ]
         connection {
             type     = "ssh"
